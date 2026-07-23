@@ -12,6 +12,7 @@
 import { state } from './state.js';
 import { loadMarketWeather, startMarketWeatherRefresh } from './market-weather.js';
 import * as hud from './ui/hud.js';
+import { initLandingEffects } from './ui/landing-effects.js';
 
 const THREE_CDN = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
 const THREE_CDN_INTEGRITY = 'sha384-CI3ELBVUz9XQO+97x6nwMDPosPR5XvsxW2ua7N1Xeygeh1IxtgqtCkGfQY9WWdHu';
@@ -67,6 +68,7 @@ async function bootScene() {
   }
 }
 
+initLandingEffects();
 hud.initHud();
 
 loadMarketWeather().then(() => hud.onMarketUpdated());

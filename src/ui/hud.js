@@ -25,7 +25,7 @@ let weatherToastShown = false;
 export function initHud() {
   els = {
     ignition: $('ignition'), startBtn: $('startBtn'), hud: $('hud'), hint: $('hint'),
-    landingMarketLabel: $('landingMarketLabel'), landingMarketValue: $('landingMarketValue'), landingMarketBeacon: $('landingMarketBeacon'),
+    landingMarketLabel: $('landingMarketLabel'), landingMarketValue: $('landingMarketValue'), landingMarketBeacon: $('landingMarketBeacon'), landingMarketTag: $('landingMarketTag'),
     ticker: $('ticker'), tape: $('tape'), finale: $('finale'),
     configToggle: $('configToggle'), configPanel: $('configPanel'), configClose: $('configClose'),
     freeRoamBtn: $('freeRoamBtn'), resumeStoryBtn: $('resumeStoryBtn'), waypointSelect: $('waypointSelect'),
@@ -156,7 +156,7 @@ export function updateLivePanel() {
 }
 
 function updateLandingWeather() {
-  if (!els.landingMarketLabel || !els.landingMarketValue || !els.landingMarketBeacon) return;
+  if (!els.landingMarketLabel || !els.landingMarketValue || !els.landingMarketBeacon || !els.landingMarketTag) return;
   const ms = state.marketState;
   const pct = ms.market?.compositeChangePct;
   const labels = {
@@ -166,8 +166,16 @@ function updateLandingWeather() {
     fallback: 'Market feed unavailable',
     loading: 'Reading the market sky'
   };
+  const tags = {
+    live: 'Live feed',
+    closed: 'Market closed',
+    stale: 'Older feed',
+    fallback: 'Feed offline',
+    loading: 'Loading'
+  };
   els.landingMarketLabel.textContent = labels[ms.status] || labels.loading;
   els.landingMarketValue.textContent = pct == null ? 'SPY + QQQ · Awaiting feed' : `SPY + QQQ ${signedPct(pct)}`;
+  els.landingMarketTag.textContent = tags[ms.status] || tags.loading;
   els.landingMarketBeacon.classList.toggle('is-down', pct != null && pct < 0);
   els.landingMarketBeacon.classList.toggle('is-stale', ms.status === 'stale' || ms.status === 'fallback');
 }

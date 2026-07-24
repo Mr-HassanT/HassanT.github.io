@@ -68,8 +68,14 @@ async function bootScene() {
   }
 }
 
-initLandingEffects();
 hud.initHud();
+try {
+  initLandingEffects();
+} catch (error) {
+  // The kinetic canvas is decorative; never let an unsupported browser API
+  // prevent the core portfolio, CTA, or written fallback from starting.
+  console.warn('Hassan City: landing effects unavailable -', error);
+}
 
 loadMarketWeather().then(() => hud.onMarketUpdated());
 startMarketWeatherRefresh(() => hud.onMarketUpdated());

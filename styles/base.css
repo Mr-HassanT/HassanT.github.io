@@ -57,7 +57,7 @@ body.no-3d #spacer{height:auto}
 .landing-eyebrow{display:inline-flex;align-items:center;gap:.45rem;margin-bottom:1.05rem;font-size:.68rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
 .landing-eyebrow span{padding:.42rem .66rem;border:2px solid var(--navy);background:var(--cream)}
 .landing-eyebrow span:first-child{color:var(--cream);background:var(--navy)}
-.landing-role{max-width:62ch;color:#b8442e;font-size:.78rem;font-weight:900;letter-spacing:.11em;line-height:1.35;text-transform:uppercase;text-wrap:balance}
+.landing-role{max-width:62ch;color:#7f2d24;font-size:.78rem;font-weight:900;letter-spacing:.11em;line-height:1.35;text-transform:uppercase;text-wrap:balance}
 #ignition h1{margin-top:.75rem;font-family:'Fredoka',sans-serif;font-size:clamp(3.7rem,6.7vw,6.5rem);font-weight:700;letter-spacing:-.055em;line-height:.88;text-wrap:balance;color:var(--navy)}
 #ignition h1 span{display:block;font-size:.58em;letter-spacing:-.035em;color:#42548b}
 .landing-intro{max-width:59ch;margin-top:1.35rem;color:#364472;font-size:clamp(1rem,1.2vw,1.12rem);font-weight:700;line-height:1.58;text-wrap:pretty}

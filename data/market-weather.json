@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-07T00:35:55.050Z",
+  "updatedAt": "2026-08-07T14:04:52.927Z",
   "source": {
     "market": "Yahoo Finance chart API"
   },
@@ -44,6 +44,8 @@
       103.578,
       103.317
     ],
-    "source": "Yahoo Finance chart API"
+    "source": "Yahoo Finance chart API",
+    "stale": true,
+    "error": "429 Too Many Requests for https://query1.finance.yahoo.com/v8/finance/chart/QQQ?range=5d&interval=1d"
   }
 }
